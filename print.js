@@ -14,7 +14,7 @@ const leftPadding = Array(digits).fill(' ').join('')
 const packageJson = fs.readFileSync('./package.json')
 const version = JSON.parse(packageJson).version
 
-console.log(`eth-twofa@${version}:`)
+console.log(`safezero/eth-twofa@${version}:`)
 
 twofas.forEach((twofa, index) => {
   let indexString = index.toString()
