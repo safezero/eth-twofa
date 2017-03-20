@@ -4,7 +4,7 @@
   "description": "Generate two-factor authentication codes for smart contracts",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha -t 5000"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,17 @@
     "commander": "^2.9.0",
     "keccak256-amorph": "0.0.1",
     "random-amorph": "0.0.1"
+  },
+  "devDependencies": {
+    "amorph-parse-solc-output": "^0.1.0",
+    "chai": "^3.5.0",
+    "chai-amorph": "0.0.4",
+    "ethereumjs-testrpc": "^3.0.3",
+    "lodash": "^4.17.4",
+    "mocha": "^3.2.0",
+    "q": "^1.4.1",
+    "random-amorph": "0.0.1",
+    "solc": "^0.4.10",
+    "ultralightbeam": "^0.16.4"
   }
 }
