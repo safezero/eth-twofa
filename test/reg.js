@@ -100,7 +100,7 @@ describe('twofaReg', () => {
   })
 
   it('should NOT be able to set a new value with a bad secret', () => {
-    return twofaReg.broadcast('setValue(bytes32,bytes32,bytes4,uint256)', [
+    return twofaReg.broadcast('setValue(bytes16,bytes16,bytes4,uint256)', [
       twofas[1].secret,
       twofas[1].hashedSecret,
       twofas[1].checksum,
@@ -109,7 +109,7 @@ describe('twofaReg', () => {
   })
 
   it('should NOT be able to set a new value if you forget hashedSecret/checksum', () => {
-    return twofaReg.broadcast('setValue(bytes32,bytes32,bytes4,uint256)', [
+    return twofaReg.broadcast('setValue(bytes16,bytes16,bytes4,uint256)', [
       twofas[0].secret,
       zero,
       zero,
@@ -118,7 +118,7 @@ describe('twofaReg', () => {
   })
 
   it('should NOT be able to set a new value with bad checksum', () => {
-    return twofaReg.broadcast('setValue(bytes32,bytes32,bytes4,uint256)', [
+    return twofaReg.broadcast('setValue(bytes16,bytes16,bytes4,uint256)', [
       twofas[0].secret,
       twofas[1].hashedSecret,
       twofas[2].checksum,
@@ -131,7 +131,7 @@ describe('twofaReg', () => {
   })
 
   it('should be able to set a new value', () => {
-    return twofaReg.broadcast('setValue(bytes32,bytes32,bytes4,uint256)', [
+    return twofaReg.broadcast('setValue(bytes16,bytes16,bytes4,uint256)', [
       twofas[0].secret,
       twofas[1].hashedSecret,
       twofas[1].checksum,
@@ -148,7 +148,7 @@ describe('twofaReg', () => {
   })
 
   it('should be able to set a new value (again)', () => {
-    return twofaReg.broadcast('setValue(bytes32,bytes32,bytes4,uint256)', [
+    return twofaReg.broadcast('setValue(bytes16,bytes16,bytes4,uint256)', [
       twofas[1].secret,
       twofas[2].hashedSecret,
       twofas[2].checksum,

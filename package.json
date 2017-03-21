@@ -18,6 +18,7 @@
   "homepage": "https://github.com/safezero/eth-twofa#readme",
   "dependencies": {
     "amorph": "^1.1.0",
+    "amorph-base2048": "0.0.1",
     "arguguard": "0.0.6",
     "commander": "^2.9.0",
     "keccak256-amorph": "0.0.1",

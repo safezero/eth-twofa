@@ -1,9 +1,15 @@
 const commander = require('commander')
 const Twofa = require('./')
 const fs = require('fs')
+const Amorph = require('amorph')
+const amorphBase2048Plugin = require('amorph-base2048')
+
+Amorph.loadPlugin(amorphBase2048Plugin)
+Amorph.ready()
 
 commander
   .option('-n, --number <n>', 'number of twofa codes to print', parseInt)
+  .option('-f, --form [value]', 'output form', 'hex')
   .parse(process.argv)
 
 const number = commander.number ? parseInt(commander.number) : 100
@@ -17,13 +23,10 @@ const version = JSON.parse(packageJson).version
 console.log(`safezero/eth-twofa@${version}:`)
 
 twofas.forEach((twofa, index) => {
-  let indexString = index.toString()
-  while(indexString.length < digits) {
-    indexString = ' ' + indexString
-  }
-  console.log('================================================================================')
-  console.log(indexString,  'secret      ',  twofa.secret.to(form))
-  console.log(leftPadding,  'hashedSecret',twofa.hashedSecret.to(form))
-  console.log(leftPadding,  'checksum    ', twofa.checksum.to(form))
+  console.log(' ')
+  console.log('n', index)
+  console.log('s', twofa.secret.to(form))
+  console.log('h', twofa.hashedSecret.to(form))
+  console.log('c', twofa.checksum.to(form))
 
 })
