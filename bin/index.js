@@ -5,6 +5,7 @@ const Twofa = require('../')
 const fs = require('fs')
 const Amorph = require('amorph')
 const amorphBase2048Plugin = require('amorph-base2048')
+const colors = require('colors')
 
 Amorph.loadPlugin(amorphBase2048Plugin)
 Amorph.ready()
@@ -22,13 +23,13 @@ const leftPadding = Array(digits).fill(' ').join('')
 const packageJson = fs.readFileSync('./package.json')
 const version = JSON.parse(packageJson).version
 
-console.log(`safezero/eth-twofa@${version}:`)
+console.log(`safezero/eth-twofa@${version}:`.magenta)
 
 twofas.forEach((twofa, index) => {
   console.log(' ')
-  console.log('n', index)
-  console.log('s', twofa.secret.to(form))
-  console.log('h', twofa.hashedSecret.to(form))
-  console.log('c', twofa.checksum.to(form))
+  console.log('n'.green, index)
+  console.log('s'.green, twofa.secret.to(form))
+  console.log('h'.green, twofa.hashedSecret.to(form))
+  console.log('c'.green, twofa.checksum.to(form))
 
 })
