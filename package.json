@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha -t 5000"
   },
+  "bin": {
+    "eth-twofa": "bin/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/safezero/eth-twofa.git"
