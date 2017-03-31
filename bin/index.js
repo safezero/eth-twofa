@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const commander = require('commander')
-const Twofa = require('./')
+const Twofa = require('../')
 const fs = require('fs')
 const Amorph = require('amorph')
 const amorphBase2048Plugin = require('amorph-base2048')
