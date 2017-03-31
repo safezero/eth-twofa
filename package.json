@@ -1,6 +1,6 @@
 {
   "name": "eth-twofa",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Generate two-factor authentication codes for smart contracts",
   "main": "index.js",
   "scripts": {
