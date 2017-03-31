@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const commander = require('commander')
 const Twofa = require('./')
 const fs = require('fs')
